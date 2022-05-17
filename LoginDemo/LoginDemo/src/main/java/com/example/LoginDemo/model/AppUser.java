@@ -25,7 +25,19 @@ public class AppUser implements UserDetails {
     private String lastName;
     private String email;
     private String password;
+    private String userRole;
 
+    @Override
+    public String toString() {
+        return "AppUser{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", userRole='" + userRole + '\'' +
+                '}';
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -56,4 +68,6 @@ public class AppUser implements UserDetails {
     public boolean isEnabled() {
         return false;
     }
+
+
 }
